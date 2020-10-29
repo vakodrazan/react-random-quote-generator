@@ -29772,7 +29772,51 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"components/Quote.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Quotes;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Quotes({
+  quotes
+}) {
+  return /*#__PURE__*/_react.default.createElement("blockquote", null, quotes.length === 0 && /*#__PURE__*/_react.default.createElement("h2", null, "Loading..."), /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteText), /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)));
+}
+},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = RandomQuotes;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function RandomQuotes({
+  quotes,
+  setQuotes
+}) {
+  const handleClick = () => {
+    console.log(quotes); // const randomNumber = Math.floor(Math.random() * quotes.length);
+    // setQuotes(randomNumber)
+  };
+
+  return /*#__PURE__*/_react.default.createElement("button", {
+    onClick: handleClick
+  }, "Random");
+}
+},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29781,6 +29825,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = App;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _Quote = _interopRequireDefault(require("./components/Quote"));
+
+var _RandomQuotes = _interopRequireDefault(require("./components/RandomQuotes"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -29801,12 +29851,16 @@ function App() {
 
   (0, _react.useEffect)(() => {
     fetchGoutes();
-  }, []); // if (!quotes.quoteText) return null;
-
+  }, []);
   console.log(quotes);
-  return /*#__PURE__*/_react.default.createElement("h1", null, "Hello ", quotes.quoteText);
+  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_Quote.default, {
+    quotes: quotes
+  }), /*#__PURE__*/_react.default.createElement(_RandomQuotes.default, {
+    setQuotes: setQuotes,
+    quotes: quotes
+  }));
 }
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./components/Quote":"components/Quote.js","./components/RandomQuotes":"components/RandomQuotes.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29846,7 +29900,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51394" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53501" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

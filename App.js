@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Quotes from './components/Quote';
+import RandomQuotes from './components/RandomQuotes';
 
 export default function App() {
     const [quotes, setQuotes] = useState([]);
@@ -13,14 +15,16 @@ export default function App() {
         }
     }
 
-
     useEffect(() => {
-        fetchGoutes()
+        fetchGoutes();
+
     }, []);
-    // if (!quotes.quoteText) return null;
     console.log(quotes);
     
     return (
-        <h1>Hello {quotes.quoteText}</h1>
+        <section>
+            <Quotes quotes={quotes} />
+            <RandomQuotes setQuotes={setQuotes} quotes={quotes} />
+        </section>
     )
 }
