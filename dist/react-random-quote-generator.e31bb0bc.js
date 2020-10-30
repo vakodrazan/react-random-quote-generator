@@ -33948,7 +33948,9 @@ function Quotes({
     className: "arrow"
   }, arrowRightIcon)))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/NewRandomQuotes.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"assets/refresh.svg":[function(require,module,exports) {
+module.exports = "/refresh.35079f67.svg";
+},{}],"components/NewRandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33957,6 +33959,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = NewRandomQuotes;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _refresh = _interopRequireDefault(require("../assets/refresh.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -33970,10 +33976,14 @@ function NewRandomQuotes({
   }
 
   return /*#__PURE__*/_react.default.createElement("button", {
-    onClick: handleClick
-  }, "Random");
+    onClick: handleClick,
+    className: "random"
+  }, "Random", /*#__PURE__*/_react.default.createElement("img", {
+    src: _refresh.default,
+    alt: "Refresh Icon"
+  }));
 }
-},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../assets/refresh.svg":"assets/refresh.svg"}],"components/RandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34080,7 +34090,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57505" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49980" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

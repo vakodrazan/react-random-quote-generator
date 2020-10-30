@@ -67,4 +67,12 @@ svg {
     margin-bottom: -0.2rem;
 }
 
+.random {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    background-color: aliceblue;
+}
+
 /*# sourceMappingURL=/css.967bad95.css.map */

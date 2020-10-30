@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import refreshIcon from '../assets/refresh.svg';
 
 export default function NewRandomQuotes({fetchQoutes}) {
     function  handleClick() {
@@ -7,6 +8,12 @@ export default function NewRandomQuotes({fetchQoutes}) {
 
 
     return (
-        <button onClick={handleClick} >Random</button>
+        <button 
+            onClick={handleClick} 
+            className="random"
+        >
+            Random
+            <img src={refreshIcon} alt="Refresh Icon" />
+        </button>
     )
 }
