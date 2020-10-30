@@ -8,7 +8,7 @@ export default function App() {
         <div>
 			<Router>
 				<Switch>
-					<Route path={`/authors/:quoteAuthor`}>
+					<Route path={`/authors/:authorName`}>
 						<AuthorQuotes />
 					</Route>
 					<Route path='/'>

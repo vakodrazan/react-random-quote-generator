@@ -4,15 +4,14 @@ import { useParams } from 'react-router-dom';
 
 export default function AuthorQuotes() {
     const [authorQuotes, setAuthorQuotes] = useState([]);
-    const {quoteAuthor} = useParams();
-    console.log(quoteAuthor);
+    const {authorName} = useParams();
 
     const BASE_URL = "https://quote-garden.herokuapp.com/api/v2/authors/";
     const END_URL = "?page=1&limit=10"
 
 
     const fetchQoutes = async () => {
-        const res = await fetch(BASE_URL + quoteAuthor + END_URL);
+        const res = await fetch(BASE_URL + authorName + END_URL);
             try{
             console.log(res);
             const data = await res.json();
@@ -25,15 +24,13 @@ export default function AuthorQuotes() {
     useEffect(() => {
         fetchQoutes();
 
-    }, [quoteAuthor]);
-
-    console.log(authorQuotes);
+    }, [authorName]);
 
     return (
         <blockquote>
             <h3>
                 <cite>
-                    {quoteAuthor}
+                    {authorName}
                 </cite>
             </h3>
             {authorQuotes.map(quote => (

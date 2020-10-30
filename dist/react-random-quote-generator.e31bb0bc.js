@@ -33872,14 +33872,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function AuthorQuotes() {
   const [authorQuotes, setAuthorQuotes] = (0, _react.useState)([]);
   const {
-    quoteAuthor
+    authorName
   } = (0, _reactRouterDom.useParams)();
-  console.log(quoteAuthor);
   const BASE_URL = "https://quote-garden.herokuapp.com/api/v2/authors/";
   const END_URL = "?page=1&limit=10";
 
   const fetchQoutes = async () => {
-    const res = await fetch(BASE_URL + quoteAuthor + END_URL);
+    const res = await fetch(BASE_URL + authorName + END_URL);
 
     try {
       console.log(res);
@@ -33892,9 +33891,8 @@ function AuthorQuotes() {
 
   (0, _react.useEffect)(() => {
     fetchQoutes();
-  }, [quoteAuthor]);
-  console.log(authorQuotes);
-  return /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("cite", null, quoteAuthor)), authorQuotes.map(quote => /*#__PURE__*/_react.default.createElement("div", {
+  }, [authorName]);
+  return /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("cite", null, authorName)), authorQuotes.map(quote => /*#__PURE__*/_react.default.createElement("div", {
     key: quote._id
   }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("q", null, quote.quoteText)))));
 }
@@ -34001,7 +33999,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: `/authors/:quoteAuthor`
+    path: `/authors/:authorName`
   }, /*#__PURE__*/_react.default.createElement(_AuthorQuotes.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_RandomQuotes.default, null)))));
