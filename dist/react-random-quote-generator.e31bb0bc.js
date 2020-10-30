@@ -33870,13 +33870,13 @@ function Quotes({
 }) {
   return /*#__PURE__*/_react.default.createElement("blockquote", null, quotes.length === 0 && /*#__PURE__*/_react.default.createElement("h2", null, "Loading..."), /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteText), /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)));
 }
-},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/NewRandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = RandomQuotes;
+exports.default = NewRandomQuotes;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -33884,7 +33884,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function RandomQuotes({
+function NewRandomQuotes({
   quotes,
   setQuotes
 }) {
@@ -33897,19 +33897,19 @@ function RandomQuotes({
     onClick: handleClick
   }, "Random");
 }
-},{"react":"node_modules/react/index.js"}],"components/QuotesRandomly.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = QuotesRandomly;
+exports.default = RandomQuotes;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _Quote = _interopRequireDefault(require("./Quote"));
 
-var _RandomQuotes = _interopRequireDefault(require("./RandomQuotes"));
+var _NewRandomQuotes = _interopRequireDefault(require("./NewRandomQuotes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33917,7 +33917,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function QuotesRandomly() {
+function RandomQuotes() {
   const [quotes, setQuotes] = (0, _react.useState)([]);
 
   const fetchQoutes = async () => {
@@ -33936,12 +33936,12 @@ function QuotesRandomly() {
   console.log(quotes);
   return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_Quote.default, {
     quotes: quotes
-  }), /*#__PURE__*/_react.default.createElement(_RandomQuotes.default, {
+  }), /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, {
     setQuotes: setQuotes,
     quotes: quotes
   }));
 }
-},{"react":"node_modules/react/index.js","./Quote":"components/Quote.js","./RandomQuotes":"components/RandomQuotes.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Quote":"components/Quote.js","./NewRandomQuotes":"components/NewRandomQuotes.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33953,16 +33953,16 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _QuotesRandomly = _interopRequireDefault(require("./components/QuotesRandomly"));
+var _RandomQuotes = _interopRequireDefault(require("./components/RandomQuotes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
-  }, /*#__PURE__*/_react.default.createElement(_QuotesRandomly.default, null)))));
+  }, /*#__PURE__*/_react.default.createElement(_RandomQuotes.default, null)))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/QuotesRandomly":"components/QuotesRandomly.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/RandomQuotes":"components/RandomQuotes.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

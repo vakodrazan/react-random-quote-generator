@@ -1,13 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Quotes from './Quote';
+import NewRandomQuotes from './NewRandomQuotes';
 
-export default function RandomQuotes({quotes, setQuotes}) {
+export default function RandomQuotes() {
+    const [quotes, setQuotes] = useState([]);
 
-    const handleClick = () => {
-        console.log(quotes);
-        setQuotes(quotes)
+    const fetchQoutes = async () => {
+        try{
+            const res = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random");
+            const randomQuotes = await res.json();
+            setQuotes(randomQuotes.quote);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
+    useEffect(() => {
+        fetchQoutes();
+
+    }, []);
+    console.log(quotes);
+    
     return (
-        <button onClick={handleClick}>Random</button>
+        <section>
+            <Quotes quotes={quotes} />
+            <NewRandomQuotes setQuotes={setQuotes} quotes={quotes} />
+        </section>
     )
 }

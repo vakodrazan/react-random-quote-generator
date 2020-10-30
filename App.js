@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import QuotesRandomly from './components/QuotesRandomly';
+import RandomQuotes from './components/RandomQuotes';
 
 export default function App() {
     return (
@@ -8,7 +8,7 @@ export default function App() {
 			<Router>
 				<Switch>
 					<Route path='/'>
-						<QuotesRandomly />
+						<RandomQuotes />
 					</Route>
 				</Switch>
 			</Router>
