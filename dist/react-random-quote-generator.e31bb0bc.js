@@ -33869,6 +33869,19 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const arrowLeftIcon = /*#__PURE__*/_react.default.createElement("svg", {
+  className: "w-6 h-6",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/_react.default.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M7 16l-4-4m0 0l4-4m-4 4h18"
+}));
+
 function AuthorQuotes() {
   const [authorQuotes, setAuthorQuotes] = (0, _react.useState)([]);
   const {
@@ -33890,9 +33903,11 @@ function AuthorQuotes() {
   (0, _react.useEffect)(() => {
     fetchQoutes();
   }, [authorName]);
-  return /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("cite", null, authorName)), authorQuotes.map(quote => /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("p", null, arrowLeftIcon, " Homepage")), /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("cite", null, authorName)), authorQuotes.length === 0 && /*#__PURE__*/_react.default.createElement("h2", null, "Loading..."), authorQuotes.map(quote => /*#__PURE__*/_react.default.createElement("p", {
     key: quote._id
-  }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("q", null, quote.quoteText)))));
+  }, /*#__PURE__*/_react.default.createElement("q", null, quote.quoteText)))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/Quote.js":[function(require,module,exports) {
 "use strict";
@@ -33908,12 +33923,30 @@ var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const arrowRightIcon = /*#__PURE__*/_react.default.createElement("svg", {
+  className: "w-6 h-6",
+  fill: "none",
+  stroke: "currentColor",
+  viewBox: "0 0 24 24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /*#__PURE__*/_react.default.createElement("path", {
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeWidth: "2",
+  d: "M17 8l4 4m0 0l-4 4m4-4H3"
+}));
+
 function Quotes({
   quotes
 }) {
   return /*#__PURE__*/_react.default.createElement("div", null, quotes.length === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading...") : /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("q", null, quotes.quoteText)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    className: "link",
     to: `/authors/${quotes.quoteAuthor}`
-  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)))));
+  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", {
+    className: "cites"
+  }, /*#__PURE__*/_react.default.createElement("strong", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("span", {
+    className: "arrow"
+  }, arrowRightIcon)))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/NewRandomQuotes.js":[function(require,module,exports) {
 "use strict";
@@ -33925,18 +33958,20 @@ exports.default = NewRandomQuotes;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function NewRandomQuotes() {
-  const handleClick = () => {
-    window.location.reload();
-  };
+  function handleClick() {
+    console.log("Click me");
+  }
 
   return /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleClick
   }, "Random");
 }
-},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34041,7 +34076,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60571" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

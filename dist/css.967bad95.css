@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+}
+
+blockquote {
+    background-color: aliceblue;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+blockquote > * {
+    max-width: 614px;
+}
+
+blockquote > p {
+    border-left: 2px solid #F7DF94;
+    padding-left: 2rem;
+}
+
+blockquote > h3,
+blockquote footer {
+    padding-left: 2rem;
+}
+
+footer {
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer:hover {
+    background-color: black;
+    color: white;
+    max-width: 90%;
+    
+}
+
+.cites {
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow {
+    text-align: right;
+}
+
+.link {
+    text-decoration: none;
+
+}
+
+cite {
+    font-style: normal;
+}
+
+svg {
+    max-width: 20px;
+}
+
+/*# sourceMappingURL=/css.967bad95.css.map */
