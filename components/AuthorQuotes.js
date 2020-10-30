@@ -32,10 +32,11 @@ export default function AuthorQuotes() {
                     {authorName}
                 </cite>
             </h3>
+            {authorQuotes.length === 0 && <h2>Loading...</h2>}
             {authorQuotes.map(quote => (
-                <div key={quote._id}>
-                    <p><q>{quote.quoteText}</q></p>
-                </div>
+                <p key={quote._id}>
+                    <q>{quote.quoteText}</q>
+                </p>
             ))}
         </blockquote>
     )
