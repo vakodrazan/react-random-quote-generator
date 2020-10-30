@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const arrowRightIcon = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+
 export default function Quotes({quotes}) {
     return (
         <div>
@@ -12,8 +14,12 @@ export default function Quotes({quotes}) {
                     </p>
                     <Link className="link" to={`/authors/${quotes.quoteAuthor}`}>
                         <footer>
-                            <span>{quotes.quoteAuthor}</span> <cite>{quotes.quoteGenre}</cite>
+                            <span className="cites">
+                                <strong>{quotes.quoteAuthor}</strong> <cite>{quotes.quoteGenre}</cite>
+                            </span>
+                            <span className="arrow">{arrowRightIcon}</span>
                         </footer>
+                        
                     </Link>
                 </blockquote>
             }

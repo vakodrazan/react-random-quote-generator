@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NewRandomQuotes() {
 
-    const handleClick = () => {
-        window.location.reload();
+    function  handleClick() {
+        console.log("Click me");
     }
 
     return (
-        <button onClick={handleClick}>Random</button>
+        <button onClick={handleClick} >Random</button>
     )
 }
