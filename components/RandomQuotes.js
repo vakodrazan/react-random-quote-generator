@@ -24,7 +24,7 @@ export default function RandomQuotes() {
     return (
         <section>
             <Quotes quotes={quotes} />
-            <NewRandomQuotes setQuotes={setQuotes} quotes={quotes} />
+            <NewRandomQuotes />
         </section>
     )
 }

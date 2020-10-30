@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-export default function NewRandomQuotes({quotes, setQuotes}) {
+export default function NewRandomQuotes() {
 
     const handleClick = () => {
-        console.log(quotes);
-        setQuotes(quotes)
+        window.location.reload();
     }
 
     return (
