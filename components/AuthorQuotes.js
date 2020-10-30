@@ -11,9 +11,8 @@ export default function AuthorQuotes() {
 
 
     const fetchQoutes = async () => {
-        const res = await fetch(BASE_URL + authorName + END_URL);
-            try{
-            console.log(res);
+        try{
+            const res = await fetch(BASE_URL + authorName + END_URL);
             const data = await res.json();
             setAuthorQuotes(data.quotes);
         } catch (e) {

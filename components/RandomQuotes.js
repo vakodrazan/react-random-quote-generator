@@ -19,8 +19,7 @@ export default function RandomQuotes() {
         fetchQoutes();
 
     }, []);
-    console.log(quotes);
-    
+
     return (
         <section>
             <Quotes quotes={quotes} />

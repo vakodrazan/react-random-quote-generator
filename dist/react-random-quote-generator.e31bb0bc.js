@@ -33878,10 +33878,8 @@ function AuthorQuotes() {
   const END_URL = "?page=1&limit=10";
 
   const fetchQoutes = async () => {
-    const res = await fetch(BASE_URL + authorName + END_URL);
-
     try {
-      console.log(res);
+      const res = await fetch(BASE_URL + authorName + END_URL);
       const data = await res.json();
       setAuthorQuotes(data.quotes);
     } catch (e) {
@@ -33974,7 +33972,6 @@ function RandomQuotes() {
   (0, _react.useEffect)(() => {
     fetchQoutes();
   }, []);
-  console.log(quotes);
   return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_Quote.default, {
     quotes: quotes
   }), /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, null));
