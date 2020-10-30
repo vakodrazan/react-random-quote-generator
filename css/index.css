@@ -1,13 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Parisienne&display=swap');
+
 body {
     margin: 0;
     background-color: aliceblue;
+    font-size: 25px;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
+body > header {
+    text-align: center;
+    background-color: hsla(234, 83%, 61%, 0.849);
+    color: white;
+    padding: 2rem;
+}
+h1 {
+    font-family: 'Parisienne',Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    margin: 0;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)
+}
+
+h3 {
+    font-family: 'Henny Penny',Arial, Helvetica, sans-serif;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    font-size: 36px;
+}
+
+section {
+    padding-bottom: 1rem;
+}
+
+
+button {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+strong {
+    font-size: 24px;
+}
 
 .quotes {
     padding: 10px;
 }
 
+.genre {
+    font-size: 14px;
+    color: #828282;
+    font-weight: 500;
+}
 
 blockquote {
     background-color: white;
@@ -22,6 +65,7 @@ blockquote > * {
 
 blockquote > p {
     border-left: 2px solid #F7DF94;
+    padding: 1rem;
     padding-left: 2rem;
 }
 
@@ -45,6 +89,10 @@ footer:hover {
 
 footer > p {
     margin: 0;
+}
+
+q {
+    font-weight: 500;
 }
 
 .cites {
@@ -97,6 +145,10 @@ svg {
     #root {
         margin: auto;
         max-width: 650px;
+    }
+
+    h1 {
+        font-size: 56px;
     }
 
     blockquote {

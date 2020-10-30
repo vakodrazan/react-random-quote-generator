@@ -33944,7 +33944,9 @@ function Quotes({
     to: `/authors/${quotes.quoteAuthor}`
   }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("p", {
     className: "cites"
-  }, /*#__PURE__*/_react.default.createElement("strong", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("strong", null, quotes.quoteAuthor), /*#__PURE__*/_react.default.createElement("cite", {
+    className: "genre"
+  }, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("p", {
     className: "arrow"
   }, arrowRightIcon)))));
 }
