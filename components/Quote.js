@@ -14,10 +14,10 @@ export default function Quotes({quotes}) {
                     </p>
                     <Link className="link" to={`/authors/${quotes.quoteAuthor}`}>
                         <footer>
-                            <span className="cites">
+                            <p className="cites">
                                 <strong>{quotes.quoteAuthor}</strong> <cite>{quotes.quoteGenre}</cite>
-                            </span>
-                            <span className="arrow">{arrowRightIcon}</span>
+                            </p>
+                            <p className="arrow">{arrowRightIcon}</p>
                         </footer>
                         
                     </Link>
