@@ -10,7 +10,7 @@ export default function Quotes({quotes}) {
                     <p>
                         <q>{quotes.quoteText}</q>
                     </p>
-                    <Link to={`/authors/${quotes.quoteAuthor}`}>
+                    <Link className="link" to={`/authors/${quotes.quoteAuthor}`}>
                         <footer>
                             <span>{quotes.quoteAuthor}</span> <cite>{quotes.quoteGenre}</cite>
                         </footer>
