@@ -3,10 +3,17 @@ body {
     background-color: aliceblue;
 }
 
+
+.quotes {
+    padding: 10px;
+}
+
+
 blockquote {
     background-color: white;
     padding: 1rem;
     border-radius: 5px;
+    margin: 0;
 }
 
 blockquote > * {
@@ -72,5 +79,27 @@ svg {
     flex-direction: row;
     align-items: center;
     border: none;
-    background-color: aliceblue;
+    background: none;
+    float: right;
+}
+
+.random:hover {
+    background-color: rgb(247, 245, 245);
+    border-radius: 5px;
+}
+
+.random:focus {
+    outline: none;
+    color: darkblue;
+}
+
+@media (min-width: 650px) {
+    #root {
+        margin: auto;
+        max-width: 650px;
+    }
+
+    blockquote {
+        max-width: 80%;
+    }
 }

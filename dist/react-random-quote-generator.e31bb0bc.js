@@ -34019,10 +34019,12 @@ function RandomQuotes() {
   (0, _react.useEffect)(() => {
     fetchQoutes();
   }, []);
-  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_Quote.default, {
-    quotes: quotes
-  }), /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, {
+  return /*#__PURE__*/_react.default.createElement("section", {
+    className: "quotes"
+  }, /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, {
     fetchQoutes: fetchQoutes
+  }), /*#__PURE__*/_react.default.createElement(_Quote.default, {
+    quotes: quotes
   }));
 }
 },{"react":"node_modules/react/index.js","./Quote":"components/Quote.js","./NewRandomQuotes":"components/NewRandomQuotes.js"}],"App.js":[function(require,module,exports) {

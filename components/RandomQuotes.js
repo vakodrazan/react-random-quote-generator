@@ -20,9 +20,9 @@ export default function RandomQuotes() {
     }, []);
 
     return (
-        <section>
-            <Quotes quotes={quotes} />
+        <section className="quotes">
             <NewRandomQuotes fetchQoutes={fetchQoutes} />
+            <Quotes quotes={quotes} />
         </section>
     )
 }
