@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import AuthorQuotes from './components/AuthorQuotes';
 import RandomQuotes from './components/RandomQuotes';
 
 export default function App() {
@@ -7,6 +8,9 @@ export default function App() {
         <div>
 			<Router>
 				<Switch>
+					<Route path={`/authors/:quoteAuthor`}>
+						<AuthorQuotes />
+					</Route>
 					<Route path='/'>
 						<RandomQuotes />
 					</Route>
