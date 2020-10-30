@@ -33913,9 +33913,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Quotes({
   quotes
 }) {
-  return /*#__PURE__*/_react.default.createElement("blockquote", null, quotes.length === 0 && /*#__PURE__*/_react.default.createElement("h2", null, "Loading..."), /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement("div", null, quotes.length === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading...") : /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("q", null, quotes.quoteText)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quotes.quoteAuthor}`
-  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre))));
+  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/NewRandomQuotes.js":[function(require,module,exports) {
 "use strict";
