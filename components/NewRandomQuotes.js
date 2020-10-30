@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-export default function NewRandomQuotes() {
-
+export default function NewRandomQuotes({fetchQoutes}) {
     function  handleClick() {
-        console.log("Click me");
+        fetchQoutes();
     }
+
 
     return (
         <button onClick={handleClick} >Random</button>

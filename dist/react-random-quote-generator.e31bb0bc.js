@@ -33942,9 +33942,9 @@ function Quotes({
   return /*#__PURE__*/_react.default.createElement("div", null, quotes.length === 0 ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading...") : /*#__PURE__*/_react.default.createElement("blockquote", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("q", null, quotes.quoteText)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     className: "link",
     to: `/authors/${quotes.quoteAuthor}`
-  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("p", {
     className: "cites"
-  }, /*#__PURE__*/_react.default.createElement("strong", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("strong", null, quotes.quoteAuthor), " ", /*#__PURE__*/_react.default.createElement("cite", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("p", {
     className: "arrow"
   }, arrowRightIcon)))));
 }
@@ -33956,22 +33956,24 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = NewRandomQuotes;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-var _reactRouterDom = require("react-router-dom");
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function NewRandomQuotes() {
+function NewRandomQuotes({
+  fetchQoutes
+}) {
   function handleClick() {
-    console.log("Click me");
+    fetchQoutes();
   }
 
   return /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleClick
   }, "Random");
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"components/RandomQuotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34009,7 +34011,9 @@ function RandomQuotes() {
   }, []);
   return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_Quote.default, {
     quotes: quotes
-  }), /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, null));
+  }), /*#__PURE__*/_react.default.createElement(_NewRandomQuotes.default, {
+    fetchQoutes: fetchQoutes
+  }));
 }
 },{"react":"node_modules/react/index.js","./Quote":"components/Quote.js","./NewRandomQuotes":"components/NewRandomQuotes.js"}],"App.js":[function(require,module,exports) {
 "use strict";
