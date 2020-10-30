@@ -15,7 +15,8 @@ export default function Quotes({quotes}) {
                     <Link className="link" to={`/authors/${quotes.quoteAuthor}`}>
                         <footer>
                             <p className="cites">
-                                <strong>{quotes.quoteAuthor}</strong> <cite>{quotes.quoteGenre}</cite>
+                                <strong>{quotes.quoteAuthor}</strong> 
+                                <cite className="genre">{quotes.quoteGenre}</cite>
                             </p>
                             <p className="arrow">{arrowRightIcon}</p>
                         </footer>
