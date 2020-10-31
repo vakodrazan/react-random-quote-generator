@@ -55,7 +55,9 @@ Template for your readme :
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![randomquotes](./assets/random-quotes.png)
+![randomquotes](./assets/when-mouse-over.png)
+![randomquotes](./assets/authorquotes.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
@@ -64,11 +66,23 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 -   What have you learned/improved?
 -   Your wisdom? :)
 
+### Guidance
+
+ - You can find my demo in [githbub](https://github.com/vakodrazan/react-random-quote-generator)
+ - I experienced quite lots of thing.
+    - First of all, I learn how to reuse the function that I use to fetch the data from API. And reuse it when clicking the random button to get the next random quote.
+    - Secondly, I experienced that we can use a property from the api in the link by accessing it we need to `useParams`.
+    - Lastly, we can go to the list of quotes that written by one author by clicking the author link. That works because I use link by installing `npm install --save react-router-dom`
+ - I learnt so much about how to acess link in react and how to go to another page when clicking a link.
+
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 -   [React](https://reactjs.org/)
+-   [API](https://pprathameshmore.github.io/QuoteGarden/)
+-   [Netlify](https://app.netlify.com/)
+      - Netlify is a web application that allows us to publish our work on the internet for free. 
 
 ## Features
 
@@ -79,6 +93,8 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 <!-- Example: -->
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+- Get access to powershell. You can install node-sass by running `npm init`, `npm install`, `npm install react react-dom`, then install `npm install react-router-dom`
 
 ```bash
 # Clone this repository
@@ -97,6 +113,6 @@ $ npm start
 
 ## Contact
 
--   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
+-   Website [random-quotes-generator.com](https://random-quotes-generator-react.netlify.app/)
+-   GitHub [@vakodrazan](https://github.com/vakodrazan/react-random-quote-generator)
 -   Twitter [@your-twitter](https://{twitter.com/your-username})
