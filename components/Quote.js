@@ -20,7 +20,6 @@ export default function Quotes({quotes}) {
                             </p>
                             <p className="arrow">{arrowRightIcon}</p>
                         </footer>
-                        
                     </Link>
                 </blockquote>
             }

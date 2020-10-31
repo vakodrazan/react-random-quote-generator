@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import refreshIcon from '../assets/refresh.svg';
 
 export default function NewRandomQuotes({fetchQoutes}) {
